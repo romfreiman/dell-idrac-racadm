@@ -56,10 +56,10 @@ if ! /opt/dell/srvadmin/bin/idracadm7 -r $HOST -u $USER -p $PASSWORD remoteimage
 fi
 
 echo '******* Setting idrac to boot once from the attached iso'
-/opt/dell/srvadmin/bin/idracadm7 -r assisted-lab-1.mgmt.upshift.eng.rdu2.redhat.com -u admin -p et-o3xaeC7oe set iDRAC.VirtualMedia.BootOnce 1
-/opt/dell/srvadmin/bin/idracadm7 -r assisted-lab-1.mgmt.upshift.eng.rdu2.redhat.com -u admin -p et-o3xaeC7oe set iDRAC.ServerBoot.FirstBootDevice VCD-DVD
+/opt/dell/srvadmin/bin/idracadm7 -r $HOST -u admin -p et-o3xaeC7oe set iDRAC.VirtualMedia.BootOnce 1
+/opt/dell/srvadmin/bin/idracadm7 -r $HOST -u admin -p et-o3xaeC7oe set iDRAC.ServerBoot.FirstBootDevice VCD-DVD
 
 echo '******* Rebooting the server'
-/opt/dell/srvadmin/bin/idracadm7 -r assisted-lab-1.mgmt.upshift.eng.rdu2.redhat.com -u admin -p et-o3xaeC7oe serveraction powercycle
+/opt/dell/srvadmin/bin/idracadm7 -r $HOST -u admin -p et-o3xaeC7oe serveraction powercycle
 
 echo '******* Done'
